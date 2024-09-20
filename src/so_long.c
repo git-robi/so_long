@@ -1,4 +1,5 @@
 #include "../includes/so_long.h"
+#include <stdio.h>
 
 void	moves_input(t_data *data)
 {
@@ -82,7 +83,7 @@ int	handle_input(int keysym, t_data *data)
 		check_move(data, RIGHT);
 	else if (keysym == XK_Escape)
 		exit_game(data);
-	moves_input(data);
+//	moves_input(data);
 	return (0);
 }
 
@@ -90,7 +91,7 @@ int	main(int argc, char **argv)
 {
 	t_data	data;
 
-	initialize_map(argc, argv, &data);	
+	initialize_map(argc, argv, &data);
 	init_game(&data);
 	mlx_hook(data.win_ptr, KeyPress, KeyPressMask, &handle_input, &data);
 	mlx_hook(data.win_ptr, DestroyNotify, 0, &exit_game, &data);

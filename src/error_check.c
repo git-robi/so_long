@@ -22,14 +22,14 @@ int	is_wall_surrounded(t_data *data)
 	int	i;
 
 	i = 0;
-	while (data->map.tab[i])
+	while (i < data->map.rows)
 	{
-		if (data->map.tab[i][0] != WALL || data->map.tab[i][data->map.cols -1] != WALL)
+		if (data->map.tab[i][0] != WALL || data->map.tab[i][data->map.cols - 2] != WALL)
 			return (0);
 		i++;
 	}
 	i = 0;
-	while (i < data->map.cols)
+	while (i < data->map.cols - 1)
 	{
 		if (data->map.tab[0][i] != WALL || data->map.tab[data->map.rows - 1][i] != WALL)
 			return (0);
@@ -44,10 +44,10 @@ int	there_is_wrong_char(t_data *data)
 	int	j;
 
 	i = 0;
-	while (data->map.tab[i])
+	while (i < data->map.rows)
 	{
 		j = 0;
-		while (j < data->map.cols)
+		while (j < data->map.cols - 1)
 		{
 			if (!(ft_strchr("01CEPX", data->map.tab[i][j])))
 				return (1);
@@ -64,7 +64,7 @@ void	check_characters(t_data *data)
 	int	j;
 
 	i = 0;
-	while (data->map.tab[i])
+	while (i < data->map.rows)
 	{
 		j = 0;
 		while (j < data->map.cols)
@@ -74,8 +74,8 @@ void	check_characters(t_data *data)
 			if (data->map.tab[i][j] == PLAYER)
 			{
 				data->map.player++;
-				data->player.x = j;
-				data->player.y = i;
+				data->player.y = j;
+				data->player.x = i;
 			}
 			if (data->map.tab[i][j] == COINS)
 				data->map.coins++;

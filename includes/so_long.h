@@ -25,18 +25,18 @@
 # define LEFT	3
 # define RIGHT	4
 
-# define BACKGROUND_PATH	"../img/background"
-# define WALL_PATH		"../img/wall"
-# define COINS_PATH		"../img/food"
-# define ENEMY_PATH		"../img/bottle"
-# define PLAYER_F_PATH		"../img/dog"
-# define PLAYER_B_PATH		"../img/dog"
-# define PLAYER_R_PATH		"../img/dog"
-# define PLAYER_L_PATH		"../img/dog"
-# define EXIT_0_PATH		"../img/open"
-# define EXIT_C_PATH		"../img/closed"
+# define BACKGROUND_PATH	"./img/background"
+# define WALL_PATH		"./img/wall"
+# define COINS_PATH		"./img/food"
+# define ENEMY_PATH		"./img/bottle"
+# define PLAYER_F_PATH		"./img/dog"
+# define PLAYER_B_PATH		"./img/dog"
+# define PLAYER_R_PATH		"./img/dog"
+# define PLAYER_L_PATH		"./img/dog"
+# define EXIT_0_PATH		"./img/open"
+# define EXIT_C_PATH		"./img/closed"
 
-# define PX 50
+# define PX 30
 
 typedef struct s_list
 {
@@ -48,7 +48,7 @@ typedef struct s_copy
 {
 	char	**tab;
 	int	coins;
-	int	enemies;
+	int	exit;
 }	t_copy;
 
 typedef struct s_player
@@ -112,7 +112,7 @@ int     is_right_shape(t_data *data);
 //path check
 int     path_check(t_data *data);
 void    init_map_copy(t_data *data, t_copy *map_copy);
-void    flood_fill_algorithm(t_data, t_copy *map_copy, int y, int x);
+void    flood_fill_algorithm(t_data *data, t_copy *map_copy, int y, int x);
 //initialize_game
 void    init_game(t_data *data);
 void    init_asset(t_data *data);
@@ -129,7 +129,7 @@ void    move_player(t_data *data, int n_x, int n_y, int asset);
 void    moves_input(t_data *data);
 //free_memory
 void    free_map(char **map);
-void    free_assets(t_data *data);
+void    destroy_assets(t_data *data);
 //exit_game
 void     finish_game(t_data *data, int result);
 int     exit_game(t_data *data);
@@ -149,5 +149,7 @@ void    reset_list(t_list **list);
 void    remove_last_node(t_list **list);
 void    fill_line(t_list *list, char *line, int line_len);
 void    free_all(t_list **list);
+int     ft_strcmp(char *s1, char *s2);
+char    *ft_strdup(const char *s);
 
 #endif

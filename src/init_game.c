@@ -6,16 +6,16 @@ void	init_game(t_data *data)
 	if (!data->mlx_ptr)
 		print_error_and_exit("mlx_ptr allocation failed", data);
 	data->win_ptr = mlx_new_window(data->mlx_ptr, \
-	data->map.cols * 32, data->map.rows * 32, "so_long");
-	if (game->win_ptr == NULL)
+	(data->map.cols - 1) * PX, data->map.rows * PX, "so_long");
+	if (data->win_ptr == NULL)
 	{
 		free(data->mlx_ptr);
 		print_error_and_exit("win_ptr allocation failed", data);
 	}
-	init_sprite(data);
-	data->player->moves = 0;
+	init_asset(data);
+	data->move_count = 0;
 	data->is_ready = 0;  //I don't know what this is for 
-	data->player->pos = DOWN;
+	data->player.pos = DOWN;
 }
 
 void	init_asset(t_data *data)
@@ -35,9 +35,11 @@ void	init_asset(t_data *data)
 t_sprite	make_sprite(char *sprite_path, t_data *data)
 {
 		t_sprite	sprite;
+		int		px;
 
-		sprite.xpm_ptr = mlx_xpm_file_to_image(mlx, sprite_path, \
-		&sprite.height, &sprite.width);
+		px = PX;
+		sprite.xpm_ptr = mlx_xpm_file_to_image(data->mlx_ptr, sprite_path, \
+		&px, &px);
 		if (sprite.xpm_ptr == NULL)
 			print_error_and_exit("Sprite not found\n", data);
 		return (sprite);
