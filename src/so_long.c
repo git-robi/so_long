@@ -8,9 +8,9 @@ void	moves_input(t_data *data)
 	move_count = ft_itoa(data->move_count);
 	mlx_clear_window(data->mlx_ptr, data->win_ptr);
 	mlx_string_put(data->mlx_ptr, data->win_ptr,
-		20, data->map.rows * PX + 20, 0xff0000, "Moves: ");
+		(data->map.cols * PX) / 2 - 60, data->map.rows * PX + 20, 0xff0000, "Moves: ");
 	mlx_string_put(data->mlx_ptr, data->win_ptr,
-		100, data->map.rows * PX + 20, 0x00ff00, move_count);
+		(data->map.cols * PX) / 2, data->map.rows * PX + 20, 0x00ff00, move_count);
 	free (move_count);
 }
 
@@ -68,7 +68,9 @@ void	check_move(t_data *data, int direction)
 	else if (data->map.tab[new_y][new_x] == ENEMY)
 		finish_game(data, ENEMY);
 	else if (data->map.tab[new_y][new_x] == EXIT && data->map.coins == 0)
-		finish_game(data, EXIT);		
+		finish_game(data, EXIT);
+	else if (data->map.tab[new_y][new_x] == WALL)
+		return ;
 }
 
 int	handle_input(int keysym, t_data *data)
@@ -83,7 +85,7 @@ int	handle_input(int keysym, t_data *data)
 		check_move(data, RIGHT);
 	else if (keysym == XK_Escape)
 		exit_game(data);
-//	moves_input(data);
+	moves_input(data);
 	return (0);
 }
 

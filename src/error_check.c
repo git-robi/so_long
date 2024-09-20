@@ -74,8 +74,8 @@ void	check_characters(t_data *data)
 			if (data->map.tab[i][j] == PLAYER)
 			{
 				data->map.player++;
-				data->player.y = j;
-				data->player.x = i;
+				data->player.x = j;
+				data->player.y = i;
 			}
 			if (data->map.tab[i][j] == COINS)
 				data->map.coins++;

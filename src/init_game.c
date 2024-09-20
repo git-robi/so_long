@@ -6,7 +6,7 @@ void	init_game(t_data *data)
 	if (!data->mlx_ptr)
 		print_error_and_exit("mlx_ptr allocation failed", data);
 	data->win_ptr = mlx_new_window(data->mlx_ptr, \
-	(data->map.cols - 1) * PX, data->map.rows * PX, "so_long");
+	(data->map.cols - 1) * PX, data->map.rows * PX + 30, "so_long");
 	if (data->win_ptr == NULL)
 	{
 		free(data->mlx_ptr);

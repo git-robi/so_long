@@ -5,16 +5,16 @@ void	player_view(t_data *data, int i, int j)
 {
 	if (data->player.pos == DOWN)
 		mlx_put_image_to_window(data->mlx_ptr,
-			data->win_ptr, data->player_f.xpm_ptr, i * PX, j * PX);
-	if (data->player.pos == UP)
+			data->win_ptr, data->player_f.xpm_ptr, j * PX, i * PX);
+	else if (data->player.pos == UP)
 		mlx_put_image_to_window(data->mlx_ptr,
-			data->win_ptr, data->player_b.xpm_ptr, i * PX, j * PX);
-	if (data->player.pos == LEFT)
+			data->win_ptr, data->player_b.xpm_ptr, j * PX, i * PX);
+	else if (data->player.pos == LEFT)
 		mlx_put_image_to_window(data->mlx_ptr,
-			data->win_ptr, data->player_l.xpm_ptr, i * PX, j * PX);
-	if (data->player.pos == RIGHT)
+			data->win_ptr, data->player_l.xpm_ptr, j * PX, i * PX);
+	else if (data->player.pos == RIGHT)
 		mlx_put_image_to_window(data->mlx_ptr,
-			data->win_ptr, data->player_r.xpm_ptr, i * PX, j * PX);
+			data->win_ptr, data->player_r.xpm_ptr, j * PX, i * PX);
 }
 
 void	put_assets_on_screen(t_data *data, int i, int j)

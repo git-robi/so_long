@@ -25,18 +25,18 @@
 # define LEFT	3
 # define RIGHT	4
 
-# define BACKGROUND_PATH	"./img/background"
-# define WALL_PATH		"./img/wall"
-# define COINS_PATH		"./img/food"
-# define ENEMY_PATH		"./img/bottle"
-# define PLAYER_F_PATH		"./img/dog"
-# define PLAYER_B_PATH		"./img/dog"
-# define PLAYER_R_PATH		"./img/dog"
-# define PLAYER_L_PATH		"./img/dog"
-# define EXIT_0_PATH		"./img/open"
-# define EXIT_C_PATH		"./img/closed"
+# define BACKGROUND_PATH	"./assets/back.xpm"
+# define WALL_PATH		"./assets/muro1.xpm"
+# define COINS_PATH		"./assets/colection.xpm"
+# define ENEMY_PATH		"./assets/enemy.xpm"
+# define PLAYER_F_PATH		"./assets/Persona1.xpm"
+# define PLAYER_B_PATH		"./assets/Persona2.xpm"
+# define PLAYER_R_PATH		"./assets/Persona3.xpm"
+# define PLAYER_L_PATH		"./assets/Persona4.xpm"
+# define EXIT_0_PATH		"./assets/open.xpm"
+# define EXIT_C_PATH		"./assets/closed.xpm"
 
-# define PX 30
+# define PX 50
 
 typedef struct s_list
 {
@@ -71,8 +71,6 @@ typedef struct s_map
 typedef struct s_sprite
 {
 	void	*xpm_ptr;
-	int	height;
-	int	width;
 }	t_sprite;
 
 typedef struct s_data
