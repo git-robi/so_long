@@ -15,8 +15,8 @@ void	init_game(t_data *data)
 	init_asset(data);
 	data->move_count = 0;
 	data->is_ready = 0;  //I don't know what this is for 
-	data->player.pos = ONE;
-	data->player.dir = UP;
+	data->player.pos = TWO;
+	data->player.dir = RIGHT;
 }
 
 void	init_asset(t_data *data)

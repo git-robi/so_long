@@ -7,18 +7,18 @@ void	player_view(t_data *data, int i, int j)
 	{
 		if (data->player.pos == ONE)
 			mlx_put_image_to_window(data->mlx_ptr,
-				data->win_ptr, data->player_two.xpm_ptr, j * PX, i * PX);
+				data->win_ptr, data->player_one.xpm_ptr, j * PX, i * PX);
 		else if (data->player.pos == TWO)
 			mlx_put_image_to_window(data->mlx_ptr,
-				data->win_ptr, data->player_three.xpm_ptr, j * PX, i * PX);
+				data->win_ptr, data->player_two.xpm_ptr, j * PX, i * PX);
 		else if (data->player.pos == THREE)
 			mlx_put_image_to_window(data->mlx_ptr,
-				data->win_ptr, data->player_four.xpm_ptr, j * PX, i * PX);
+				data->win_ptr, data->player_three.xpm_ptr, j * PX, i * PX);
 		else if (data->player.pos == FOUR)
 			mlx_put_image_to_window(data->mlx_ptr,
-				data->win_ptr, data->player_five.xpm_ptr, j * PX, i * PX);
+				data->win_ptr, data->player_four.xpm_ptr, j * PX, i * PX);
 	}
-	else if (data->player.pos == LEFT)
+	else if (data->player.dir == LEFT)
 	{
 		if (data->player.pos == ONE)
 			mlx_put_image_to_window(data->mlx_ptr,
@@ -31,7 +31,7 @@ void	player_view(t_data *data, int i, int j)
 				data->win_ptr, data->player_seven.xpm_ptr, j * PX, i * PX);
 		else if (data->player.pos == FOUR)
 			mlx_put_image_to_window(data->mlx_ptr,
-				data->win_ptr, data->player_seven.xpm_ptr, j * PX, i * PX);
+				data->win_ptr, data->player_eight.xpm_ptr, j * PX, i * PX);
 	}
 }
 

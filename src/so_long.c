@@ -30,11 +30,11 @@ void	change_movement(t_data *data)
 {
 	if (data->player.pos == ONE)
 		data->player.pos = TWO;
-	if (data->player.pos == TWO)
+	else if (data->player.pos == TWO)
 		data->player.pos = THREE;
-	if (data->player.pos == THREE)
+	else if (data->player.pos == THREE)
 		data->player.pos = FOUR;
-	if (data->player.pos == FOUR)
+	else if (data->player.pos == FOUR)
 		data->player.pos = ONE;
 }
 
