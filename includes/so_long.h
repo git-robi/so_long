@@ -25,6 +25,11 @@
 # define THREE	3
 # define FOUR	4
 
+# define UP	5
+# define DOWN	6
+# define LEFT	7
+# define RIGHT	8
+
 # define BACKGROUND_PATH	"./img/background_50.xpm"
 # define WALL_PATH		"./img/wall_50.xpm"
 # define COINS_PATH		"./img/food_50.xpm"
@@ -59,6 +64,7 @@ typedef struct s_copy
 typedef struct s_player
 {
 	int	pos;
+	int	dir;
 	int	x;
 	int	y;
 }	t_player;
@@ -95,6 +101,10 @@ typedef struct s_data
 	t_sprite	player_two;
 	t_sprite	player_three;
 	t_sprite	player_four;
+	t_sprite	player_five;
+	t_sprite	player_six;
+	t_sprite	player_seven;
+	t_sprite	player_eight;
 	t_sprite	exit_c;
 	t_sprite	exit_o;
 	t_sprite	paw;

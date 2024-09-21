@@ -26,11 +26,24 @@ void	finish_game(t_data *data, int result)
 	exit_game(data); 
 }	
 
+void	change_movement(t_data *data)
+{
+	if (data->player.pos == ONE)
+		data->player.pos = TWO;
+	if (data->player.pos == TWO)
+		data->player.pos = THREE;
+	if (data->player.pos == THREE)
+		data->player.pos = FOUR;
+	if (data->player.pos == FOUR)
+		data->player.pos = ONE;
+}
+
 void	move_player(t_data *data, int n_x, int n_y, int asset)
 {
 	int	old_x;
 	int	old_y;
 
+	change_movement(data);
 	old_x = data->player.x;
 	old_y = data->player.y;
 	data->map.tab[old_y][old_x] = EMPTY;
@@ -54,7 +67,8 @@ void	get_new_pos(t_data *data, int *n_x, int *n_y, int dir)
 		*n_x -= 1;
 	else if (dir == RIGHT)
 		*n_x += 1;
-	data->player.pos = dir;
+	if (dir == LEFT || dir == RIGHT)
+		data->player.dir = dir;
 }
 
 void	check_move(t_data *data, int direction)

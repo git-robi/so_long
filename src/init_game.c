@@ -16,6 +16,7 @@ void	init_game(t_data *data)
 	data->move_count = 0;
 	data->is_ready = 0;  //I don't know what this is for 
 	data->player.pos = ONE;
+	data->player.dir = UP;
 }
 
 void	init_asset(t_data *data)
@@ -28,6 +29,10 @@ void	init_asset(t_data *data)
 	data->player_two = make_sprite(PLAYER_R_TWO, data);
 	data->player_three = make_sprite(PLAYER_R_THREE, data);
 	data->player_four = make_sprite(PLAYER_R_FOUR, data);
+	data->player_five = make_sprite(PLAYER_L_ONE, data);
+	data->player_six = make_sprite(PLAYER_L_TWO, data);
+	data->player_seven = make_sprite(PLAYER_L_THREE, data);
+	data->player_eight = make_sprite(PLAYER_L_FOUR, data);
 	data->exit_o = make_sprite(EXIT_0_PATH, data);
 	data->exit_c = make_sprite(EXIT_C_PATH, data);
 	data->paw = make_sprite(PAW_PATH, data);
