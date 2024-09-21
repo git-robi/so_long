@@ -20,10 +20,10 @@
 # define PLAYER	'P'
 # define ENEMY	'X'
 
-# define UP	1
-# define DOWN	2
-# define LEFT	3
-# define RIGHT	4
+# define ONE	1
+# define TWO	2
+# define THREE	3
+# define FOUR	4
 
 # define BACKGROUND_PATH	"./img/background_50.xpm"
 # define WALL_PATH		"./img/wall_50.xpm"
@@ -91,10 +91,10 @@ typedef struct s_data
 	t_sprite	wall;
 	t_sprite	coins;
 	t_sprite	enemy;
-	t_sprite	player_f;
-	t_sprite	player_b;
-	t_sprite	player_r;
-	t_sprite	player_l;
+	t_sprite	player_one;
+	t_sprite	player_two;
+	t_sprite	player_three;
+	t_sprite	player_four;
 	t_sprite	exit_c;
 	t_sprite	exit_o;
 	t_sprite	paw;

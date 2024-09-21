@@ -3,18 +3,30 @@
 
 void	player_view(t_data *data, int i, int j)
 {
-	if (data->player.pos == DOWN)
+	if (data->player.pos == ONE)
+	{
 		mlx_put_image_to_window(data->mlx_ptr,
-			data->win_ptr, data->player_f.xpm_ptr, j * PX, i * PX);
-	else if (data->player.pos == UP)
+			data->win_ptr, data->player_two.xpm_ptr, j * PX, i * PX);
+		data->player.pos = TWO;
+	}
+	else if (data->player.pos == TWO)
+	{
 		mlx_put_image_to_window(data->mlx_ptr,
-			data->win_ptr, data->player_b.xpm_ptr, j * PX, i * PX);
-	else if (data->player.pos == LEFT)
+			data->win_ptr, data->player_three.xpm_ptr, j * PX, i * PX);
+		data->player.pos = THREE;
+	}
+	else if (data->player.pos == THREE)
+	{
 		mlx_put_image_to_window(data->mlx_ptr,
-			data->win_ptr, data->player_l.xpm_ptr, j * PX, i * PX);
-	else if (data->player.pos == RIGHT)
+			data->win_ptr, data->player_four.xpm_ptr, j * PX, i * PX);
+		data->player.pos = FOUR;
+	}
+	else if (data->player.pos == FOUR)
+	{
 		mlx_put_image_to_window(data->mlx_ptr,
-			data->win_ptr, data->player_r.xpm_ptr, j * PX, i * PX);
+			data->win_ptr, data->player_five.xpm_ptr, j * PX, i * PX);
+		data->player.pos = ONE;
+	}
 }
 
 void	put_assets_on_screen(t_data *data, int i, int j)
