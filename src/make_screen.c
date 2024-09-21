@@ -26,7 +26,7 @@ void	player_view(t_data *data, int i, int j)
 		else if	(data->player.pos == TWO)
 			mlx_put_image_to_window(data->mlx_ptr,
 				data->win_ptr, data->player_six.xpm_ptr, j * PX, i * PX);
-		else if (data->playe.posr == THREE)
+		else if (data->player.pos == THREE)
 			mlx_put_image_to_window(data->mlx_ptr,
 				data->win_ptr, data->player_seven.xpm_ptr, j * PX, i * PX);
 		else if (data->player.pos == FOUR)
