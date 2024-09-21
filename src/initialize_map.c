@@ -72,7 +72,7 @@ void	initialize_map(int argc, char **argv, t_data *data)
 	check_argv(argc, argv, data);
 	store_map(argv, data);
 	check_map(data);
-//	if (path_check(data))
-//		print_error_and_exit("path not found.\n", data);
+	if (path_check(data))
+		print_error_and_exit("path not found.\n", data);
 }
 	

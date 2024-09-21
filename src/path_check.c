@@ -1,8 +1,7 @@
 #include "../includes/so_long.h"
 
 void	flood_fill_algorithm(t_data *data, t_copy *map_copy, int y, int x)
-{
-	
+{	
 	if (x < 0 || y < 0 || x >= data->map.cols || y >= data->map.rows
 		|| map_copy->tab[y][x] == WALL)
 		return ;
@@ -36,7 +35,7 @@ void	init_map_copy(t_data *data, t_copy *map_copy)
 	i = 0;
 	map_copy->exit = 0;
 	map_copy->coins = 0;
-	map_copy->tab = malloc(data->map.rows * sizeof(char *)); //consider changing with calloc
+	map_copy->tab = malloc((data->map.rows + 1) * sizeof(char *)); //consider changing with calloc
 	if (!map_copy->tab)
 		return ;
 	while (i < data->map.rows)
@@ -55,6 +54,7 @@ void	init_map_copy(t_data *data, t_copy *map_copy)
 		}
 		i++;
 	}
+	map_copy->tab[i] = NULL;
 }
 
 int	path_check(t_data *data)
