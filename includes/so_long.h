@@ -30,21 +30,21 @@
 # define LEFT	7
 # define RIGHT	8
 
-# define BACKGROUND_PATH	"./img/background_50.xpm"
-# define WALL_PATH		"./img/wall_50.xpm"
-# define COINS_PATH		"./img/food_50.xpm"
+# define BACKGROUND_PATH	"./img/black/b_background.xpm"
+# define WALL_PATH		"./img/black/b_wall.xpm"
+# define COINS_PATH		"./img/black/b_food.xpm"
 # define ENEMY_PATH		"./img/bottle.xpm"
-# define PLAYER_R_ONE		"./img/right_one.xpm"
-# define PLAYER_R_TWO		"./img/right_two.xpm"
-# define PLAYER_R_THREE		"./img/right_three.xpm"
-# define PLAYER_R_FOUR		"./img/right_four.xpm"
-# define PLAYER_L_ONE		"./img/left_one.xpm"
-# define PLAYER_L_TWO		"./img/left_two.xpm"
-# define PLAYER_L_THREE		"./img/left_three.xpm"
-# define PLAYER_L_FOUR		"./img/left_four.xpm"
-# define EXIT_0_PATH		"./img/open_exit.xpm"
-# define EXIT_C_PATH		"./img/closed_exit.xpm"
-# define PAW_PATH		"./assets/new_paw.xpm"
+# define PLAYER_R_ONE		"./img/black/b_right_one.xpm"
+# define PLAYER_R_TWO		"./img/black/b_right_two.xpm"
+# define PLAYER_R_THREE		"./img/black/b_right_three.xpm"
+# define PLAYER_R_FOUR		"./img/black/b_right_four.xpm"
+# define PLAYER_L_ONE		"./img/black/b_left_one.xpm"
+# define PLAYER_L_TWO		"./img/black/b_left_two.xpm"
+# define PLAYER_L_THREE		"./img/black/b_left_three.xpm"
+# define PLAYER_L_FOUR		"./img/black/b_left_four.xpm"
+# define EXIT_0_PATH		"./img/black/b_open_door.xpm"
+# define EXIT_C_PATH		"./img/black/b_closed_door.xpm"
+# define PAW_PATH		"./img/black/b_paw.xpm"
 
 # define PX 50
 
