@@ -7,10 +7,12 @@ void	moves_input(t_data *data)
 
 	move_count = ft_itoa(data->move_count);
 	mlx_clear_window(data->mlx_ptr, data->win_ptr);
+	mlx_put_image_to_window(data->mlx_ptr,
+                        data->win_ptr, data->paw.xpm_ptr, (data->map.cols * PX) / 2 - 60, data->map.rows * PX);
+//	mlx_string_put(data->mlx_ptr, data->win_ptr,
+//		(data->map.cols * PX) / 2 - 60, data->map.rows * PX + 20, 0xff0000, "Moves: ");
 	mlx_string_put(data->mlx_ptr, data->win_ptr,
-		(data->map.cols * PX) / 2 - 60, data->map.rows * PX + 20, 0xff0000, "Moves: ");
-	mlx_string_put(data->mlx_ptr, data->win_ptr,
-		(data->map.cols * PX) / 2, data->map.rows * PX + 20, 0x00ff00, move_count);
+		(data->map.cols * PX) / 2, data->map.rows * PX + 30, 0x00ff00, move_count);
 	free (move_count);
 }
 

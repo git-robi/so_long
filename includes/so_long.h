@@ -35,6 +35,7 @@
 # define PLAYER_L_PATH		"./assets/Persona4.xpm"
 # define EXIT_0_PATH		"./assets/open.xpm"
 # define EXIT_C_PATH		"./assets/closed.xpm"
+# define PAW_PATH		"./assets/new_paw.xpm"
 
 # define PX 50
 
@@ -92,6 +93,7 @@ typedef struct s_data
 	t_sprite	player_l;
 	t_sprite	exit_c;
 	t_sprite	exit_o;
+	t_sprite	paw;
 }	t_data;
 
 
