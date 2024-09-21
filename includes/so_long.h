@@ -32,7 +32,7 @@
 
 # define BACKGROUND_PATH	"./img/black/b_background.xpm"
 # define WALL_PATH		"./img/black/b_wall.xpm"
-# define COINS_PATH		"./img/black/b_food.xpm"
+# define COINS_PATH		"./img/black/food_40.xpm"
 # define ENEMY_PATH		"./img/white/bottle.xpm"
 # define PLAYER_R_ONE		"./img/black/b_right_one.xpm"
 # define PLAYER_R_TWO		"./img/black/b_right_two.xpm"
