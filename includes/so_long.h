@@ -37,8 +37,8 @@
 # define PLAYER_L_TWO		"./img/left_two.xpm"
 # define PLAYER_L_THREE		"./img/left_three.xpm"
 # define PLAYER_L_FOUR		"./img/left_four.xpm"
-# define EXIT_0_PATH		"./assets/open.xpm"
-# define EXIT_C_PATH		"./assets/closed.xpm"
+# define EXIT_0_PATH		"./img/open_exit.xpm"
+# define EXIT_C_PATH		"./img/closed_exit.xpm"
 # define PAW_PATH		"./assets/new_paw.xpm"
 
 # define PX 50
