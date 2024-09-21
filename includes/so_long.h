@@ -27,7 +27,7 @@
 
 # define BACKGROUND_PATH	"./img/background_50.xpm"
 # define WALL_PATH		"./img/wall_50.xpm"
-# define COINS_PATH		"./img/food_50.xpm"
+# define COINS_PATH		"./img/food_40.xpm"
 # define ENEMY_PATH		"./assets/enemy.xpm"
 # define PLAYER_F_PATH		"./img/white_background_50.xpm"
 # define PLAYER_B_PATH		"./img/white_background_50.xpm"
