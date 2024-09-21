@@ -24,10 +24,10 @@ void	init_asset(t_data *data)
 	data->wall = make_sprite(WALL_PATH, data);
 	data->coins = make_sprite(COINS_PATH, data);
 	data->enemy = make_sprite(ENEMY_PATH, data);
-	data->player_f = make_sprite(PLAYER_F_PATH, data);
-	data->player_b = make_sprite(PLAYER_B_PATH, data);
-	data->player_r = make_sprite(PLAYER_R_PATH, data);
-	data->player_l = make_sprite(PLAYER_L_PATH, data);
+	data->player_f = make_sprite(PLAYER_R_ONE, data);
+	data->player_b = make_sprite(PLAYER_R_TWO, data);
+	data->player_r = make_sprite(PLAYER_R_THREE, data);
+	data->player_l = make_sprite(PLAYER_R_FOUR, data);
 	data->exit_o = make_sprite(EXIT_0_PATH, data);
 	data->exit_c = make_sprite(EXIT_C_PATH, data);
 	data->paw = make_sprite(PAW_PATH, data);
