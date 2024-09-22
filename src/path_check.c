@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   path_check.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rgiambon <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/22 13:03:12 by rgiambon          #+#    #+#             */
+/*   Updated: 2024/09/22 13:03:15 by rgiambon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/so_long.h"
 
 void	flood_fill_algorithm(t_data *data, t_copy *map_copy, int y, int x)
-{	
+{
 	if (x < 0 || y < 0 || x >= data->map.cols || y >= data->map.rows
 		|| map_copy->tab[y][x] == WALL)
 		return ;
@@ -35,7 +47,7 @@ void	init_map_copy(t_data *data, t_copy *map_copy)
 	i = 0;
 	map_copy->exit = 0;
 	map_copy->coins = 0;
-	map_copy->tab = malloc((data->map.rows + 1) * sizeof(char *)); //consider changing with calloc
+	map_copy->tab = malloc((data->map.rows + 1) * sizeof(char *));
 	if (!map_copy->tab)
 		return ;
 	while (i < data->map.rows)

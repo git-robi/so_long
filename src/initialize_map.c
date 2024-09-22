@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   initialize_map.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rgiambon <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/22 14:09:10 by rgiambon          #+#    #+#             */
+/*   Updated: 2024/09/22 14:16:12 by rgiambon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/so_long.h"
 
 void	check_argv(int argc, char **argv, t_data *data)
@@ -17,19 +29,21 @@ void	check_argv(int argc, char **argv, t_data *data)
 
 int	get_rows_count(char *map, t_data *data)
 {
-	int	fd;
-	int	rows;
+	int		fd;
+	int		rows;
 	char	buffer;
-	int	read_bytes;
+	int		read_bytes;
 
 	rows = 0;
 	fd = open(map, O_RDONLY);
 	if (fd == -1)
 		print_error_and_exit("Map file could not be opened.\n", data);
-	while ((read_bytes = read(fd, &buffer, 1)) > 0)
+	read_bytes = read(fd, &buffer, 1);
+	while (read_bytes > 0)
 	{
 		if (buffer == '\n')
 			rows++;
+		read_bytes = read(fd, &buffer, 1);
 	}
 	if (read_bytes == -1)
 		print_error_and_exit("Error reading the file.\n", data);
@@ -57,7 +71,7 @@ void	store_map(char **argv, t_data *data)
 	{
 		data->map.tab[i] = get_next_line(fd);
 		if (data->map.tab[i] == NULL)
-			break;
+			break ;
 		i++;
 	}
 	if (i != data->map.rows)
@@ -75,4 +89,3 @@ void	initialize_map(int argc, char **argv, t_data *data)
 	if (path_check(data))
 		print_error_and_exit("path not found.\n", data);
 }
-	

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_game.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rgiambon <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/22 14:11:37 by rgiambon          #+#    #+#             */
+/*   Updated: 2024/09/22 14:11:57 by rgiambon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/so_long.h"
 
 void	init_game(t_data *data)
@@ -14,7 +26,7 @@ void	init_game(t_data *data)
 	}
 	init_asset(data);
 	data->move_count = 0;
-	data->is_ready = 0;  //I don't know what this is for 
+	data->is_ready = 0;
 	data->player.pos = TWO;
 	data->player.dir = RIGHT;
 }

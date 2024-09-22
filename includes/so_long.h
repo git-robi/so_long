@@ -1,4 +1,16 @@
-#ifndef	SO_LONG_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rgiambon <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/22 12:59:25 by rgiambon          #+#    #+#             */
+/*   Updated: 2024/09/22 14:29:56 by rgiambon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef SO_LONG_H
 # define SO_LONG_H
 
 # include "../minilibx-linux/mlx.h"
@@ -33,7 +45,7 @@
 # define BACKGROUND_PATH	"./img/black/b_background.xpm"
 # define WALL_PATH		"./img/black/b_wall.xpm"
 # define COINS_PATH		"./img/black/food_40.xpm"
-# define ENEMY_PATH		"./img/white/bottle.xpm"
+# define ENEMY_PATH		"./img/black/bottle.xpm"
 # define PLAYER_R_ONE		"./img/black/b_right_one.xpm"
 # define PLAYER_R_TWO		"./img/black/b_right_two.xpm"
 # define PLAYER_R_THREE		"./img/black/b_right_three.xpm"
@@ -50,15 +62,15 @@
 
 typedef struct s_list
 {
-	char		content[BUFFER_SIZE + 1];
+	char			content[BUFFER_SIZE + 1];
 	struct s_list	*next;
 }	t_list;
 
 typedef struct s_copy
 {
 	char	**tab;
-	int	coins;
-	int	exit;
+	int		coins;
+	int		exit;
 }	t_copy;
 
 typedef struct s_player
@@ -72,18 +84,18 @@ typedef struct s_player
 typedef struct s_map
 {
 	char	**tab;
-	int	rows;
-	int	cols;
-	int	exit;
-	int	player;
-	int	coins;
+	int		rows;
+	int		cols;
+	int		exit;
+	int		player;
+	int		coins;
 }	t_map;
 
 typedef struct s_sprite
 {
 	void	*xpm_ptr;
-	int	width;
-	int	height;
+	int		width;
+	int		height;
 }	t_sprite;
 
 typedef struct s_data
@@ -91,9 +103,9 @@ typedef struct s_data
 	void		*mlx_ptr;
 	void		*win_ptr;
 	t_map		map;
-	int		is_map_alloc;
-	int		move_count;
-	int		is_ready;
+	int			is_map_alloc;
+	int			move_count;
+	int			is_ready;
 	t_player	player;
 	t_sprite	background;
 	t_sprite	wall;
@@ -114,23 +126,24 @@ typedef struct s_data
 
 void		initialize_map(int argc, char **argv, t_data *data);
 void		check_argv(int argc, char **argv, t_data *data);
-int		get_rows_count(char *map, t_data *data);
+int			get_rows_count(char *map, t_data *data);
 void		store_map(char **argv, t_data *data);
 void		check_map(t_data *data);
 void		check_characters(t_data *data);
-int		there_is_wrong_char(t_data *data);
-int		is_wall_surrounded(t_data *data);
-int		is_right_shape(t_data *data);
-int		path_check(t_data *data);
+int			there_is_wrong_char(t_data *data);
+int			is_wall_surrounded(t_data *data);
+int			is_right_shape(t_data *data);
+int			path_check(t_data *data);
 void		init_map_copy(t_data *data, t_copy *map_copy);
 void		flood_fill_algorithm(t_data *data, t_copy *map_copy, int y, int x);
 void		init_game(t_data *data);
 void		init_asset(t_data *data);
-t_sprite        make_sprite(char *sprite_path, t_data *data, int width, int height);
-int		make_screen(t_data *data);
-void		player_view(t_data *data, int i, int j);
+t_sprite	make_sprite(char *sprite_path, t_data *data, int width, int height);
+int			make_screen(t_data *data);
+void		player_view_right(t_data *data, int i, int j);
+void		player_view_left(t_data *data, int i, int j);
 void		put_assets_on_screen(t_data *data, int i, int j);
-int		handle_input(int keysim, t_data *data);
+int			handle_input(int keysim, t_data *data);
 void		check_move(t_data *data, int direction);
 void		get_new_pos(t_data *data, int *n_x, int *n_y, int dir);
 void		move_player(t_data *data, int n_x, int n_y, int asset);
@@ -138,23 +151,23 @@ void		moves_input(t_data *data);
 void		free_map(char **map);
 void		destroy_assets(t_data *data);
 void		finish_game(t_data *data, int result);
-int		exit_game(t_data *data);
+int			exit_game(t_data *data);
 void		print_error_and_exit(char *msg, t_data *data);
 char		*ft_strchr(const char *string, int c);
-int		ft_strlen(const char *string);
+int			ft_strlen(const char *string);
 char		*ft_itoa(int n);
 void		ft_putstr_fd(char *s, int fd);
 char		*get_next_line(int fd);
-int		count_len(t_list **list);
+int			count_len(t_list **list);
 void		read_and_putnode(int fd, t_list **list);
-int		new_line(t_list **list);
+int			new_line(t_list **list);
 t_list		*add_new_node(t_list **list, int is_new_list);
 void		fill_new_list(t_list *tmp, t_list *new_list);
 void		reset_list(t_list **list);
 void		remove_last_node(t_list **list);
 void		fill_line(t_list *list, char *line, int line_len);
 void		free_all(t_list **list);
-int		ft_strcmp(char *s1, char *s2);
+int			ft_strcmp(char *s1, char *s2);
 char		*ft_strdup(const char *s);
 
 #endif

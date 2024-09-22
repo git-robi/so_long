@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   error_check.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rgiambon <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/22 13:02:14 by rgiambon          #+#    #+#             */
+/*   Updated: 2024/09/22 13:02:37 by rgiambon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/so_long.h"
 
 int	is_right_shape(t_data *data)
 {
 	int	i;
-	
+
 	i = 1;
 	data->map.cols = ft_strlen(data->map.tab[0]);
 	if (data->map.cols == data->map.rows)
@@ -24,14 +36,16 @@ int	is_wall_surrounded(t_data *data)
 	i = 0;
 	while (i < data->map.rows)
 	{
-		if (data->map.tab[i][0] != WALL || data->map.tab[i][data->map.cols - 2] != WALL)
+		if (data->map.tab[i][0] != WALL
+			|| data->map.tab[i][data->map.cols - 2] != WALL)
 			return (0);
 		i++;
 	}
 	i = 0;
 	while (i < data->map.cols - 1)
 	{
-		if (data->map.tab[0][i] != WALL || data->map.tab[data->map.rows - 1][i] != WALL)
+		if (data->map.tab[0][i] != WALL
+			|| data->map.tab[data->map.rows - 1][i] != WALL)
 			return (0);
 		i++;
 	}
@@ -56,7 +70,7 @@ int	there_is_wrong_char(t_data *data)
 		i++;
 	}
 	return (0);
-}	
+}
 
 void	check_characters(t_data *data)
 {
@@ -84,7 +98,7 @@ void	check_characters(t_data *data)
 		i++;
 	}
 }
-		
+
 void	check_map(t_data *data)
 {
 	data->map.exit = 0;
@@ -92,8 +106,8 @@ void	check_map(t_data *data)
 	data->map.coins = 0;
 	if (!(is_right_shape(data)))
 		print_error_and_exit("Map is not rectangular.\n", data);
-	if(!(is_wall_surrounded(data)))
-		print_error_and_exit("Map is not wall surrounded.\n",data);
+	if (!(is_wall_surrounded(data)))
+		print_error_and_exit("Map is not wall surrounded.\n", data);
 	if (there_is_wrong_char(data))
 		print_error_and_exit("Wrong char in map\n", data);
 	check_characters(data);

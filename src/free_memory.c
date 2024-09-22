@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   free_memory.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rgiambon <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/22 14:10:54 by rgiambon          #+#    #+#             */
+/*   Updated: 2024/09/22 14:10:56 by rgiambon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/so_long.h"
 
 void	destroy_assets(t_data *data)
@@ -11,9 +23,9 @@ void	destroy_assets(t_data *data)
 	mlx_destroy_image(data->mlx_ptr, data->player_three.xpm_ptr);
 	mlx_destroy_image(data->mlx_ptr, data->player_four.xpm_ptr);
 	mlx_destroy_image(data->mlx_ptr, data->player_five.xpm_ptr);
-        mlx_destroy_image(data->mlx_ptr, data->player_six.xpm_ptr);
-        mlx_destroy_image(data->mlx_ptr, data->player_seven.xpm_ptr);
-        mlx_destroy_image(data->mlx_ptr, data->player_eight.xpm_ptr);
+	mlx_destroy_image(data->mlx_ptr, data->player_six.xpm_ptr);
+	mlx_destroy_image(data->mlx_ptr, data->player_seven.xpm_ptr);
+	mlx_destroy_image(data->mlx_ptr, data->player_eight.xpm_ptr);
 	mlx_destroy_image(data->mlx_ptr, data->exit_c.xpm_ptr);
 	mlx_destroy_image(data->mlx_ptr, data->exit_o.xpm_ptr);
 }
@@ -21,7 +33,7 @@ void	destroy_assets(t_data *data)
 void	free_map(char	**map)
 {
 	int	i;
-	
+
 	i = 0;
 	while (map[i])
 	{
