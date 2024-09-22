@@ -42,21 +42,21 @@
 # define LEFT	7
 # define RIGHT	8
 
-# define BACKGROUND_PATH	"./img/black/b_background.xpm"
-# define WALL_PATH		"./img/black/b_wall.xpm"
-# define COINS_PATH		"./img/black/food_40.xpm"
-# define ENEMY_PATH		"./img/black/bottle.xpm"
-# define PLAYER_R_ONE		"./img/black/b_right_one.xpm"
-# define PLAYER_R_TWO		"./img/black/b_right_two.xpm"
-# define PLAYER_R_THREE		"./img/black/b_right_three.xpm"
-# define PLAYER_R_FOUR		"./img/black/b_right_four.xpm"
-# define PLAYER_L_ONE		"./img/black/b_left_one.xpm"
-# define PLAYER_L_TWO		"./img/black/b_left_two.xpm"
-# define PLAYER_L_THREE		"./img/black/b_left_three.xpm"
-# define PLAYER_L_FOUR		"./img/black/b_left_four.xpm"
-# define EXIT_0_PATH		"./img/black/b_open_door.xpm"
-# define EXIT_C_PATH		"./img/black/b_closed_door.xpm"
-# define PAW_PATH		"./img/black/b_paw.xpm"
+# define BACKGROUND_PATH	"./textures/black/b_background.xpm"
+# define WALL_PATH		"./textures/black/b_wall.xpm"
+# define COINS_PATH		"./textures/black/food_40.xpm"
+# define ENEMY_PATH		"./textures/black/bottle.xpm"
+# define PLAYER_R_ONE		"./textures/black/b_right_one.xpm"
+# define PLAYER_R_TWO		"./textures/black/b_right_two.xpm"
+# define PLAYER_R_THREE		"./textures/black/b_right_three.xpm"
+# define PLAYER_R_FOUR		"./textures/black/b_right_four.xpm"
+# define PLAYER_L_ONE		"./textures/black/b_left_one.xpm"
+# define PLAYER_L_TWO		"./textures/black/b_left_two.xpm"
+# define PLAYER_L_THREE		"./textures/black/b_left_three.xpm"
+# define PLAYER_L_FOUR		"./textures/black/b_left_four.xpm"
+# define EXIT_0_PATH		"./textures/black/b_open_door.xpm"
+# define EXIT_C_PATH		"./textures/black/b_closed_door.xpm"
+# define PAW_PATH		"./textures/black/b_paw.xpm"
 
 # define PX 50
 
@@ -105,7 +105,6 @@ typedef struct s_data
 	t_map		map;
 	int			is_map_alloc;
 	int			move_count;
-//	int			is_ready;
 	t_player	player;
 	t_sprite	background;
 	t_sprite	wall;
