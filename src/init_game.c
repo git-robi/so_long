@@ -14,6 +14,8 @@
 
 void	init_game(t_data *data)
 {
+	data->mlx_ptr = NULL;
+	data->win_ptr = NULL;
 	data->mlx_ptr = mlx_init();
 	if (!data->mlx_ptr)
 		print_error_and_exit("mlx_ptr allocation failed", data);
@@ -26,7 +28,6 @@ void	init_game(t_data *data)
 	}
 	init_asset(data);
 	data->move_count = 0;
-//	data->is_ready = 0;
 	data->player.pos = TWO;
 	data->player.dir = RIGHT;
 }
@@ -56,6 +57,7 @@ t_sprite	make_sprite(char *sprite_path, t_data *data, int width, int height)
 
 	sprite.width = width;
 	sprite.height = height;
+	sprite.xpm_ptr = NULL;
 	sprite.xpm_ptr = mlx_xpm_file_to_image(data->mlx_ptr, sprite_path, \
 	&sprite.width, &sprite.height);
 	if (sprite.xpm_ptr == NULL)

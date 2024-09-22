@@ -28,6 +28,7 @@ void	destroy_assets(t_data *data)
 	mlx_destroy_image(data->mlx_ptr, data->player_eight.xpm_ptr);
 	mlx_destroy_image(data->mlx_ptr, data->exit_c.xpm_ptr);
 	mlx_destroy_image(data->mlx_ptr, data->exit_o.xpm_ptr);
+	mlx_destroy_image(data->mlx_ptr, data->paw.xpm_ptr);
 }
 
 void	free_map(char	**map)

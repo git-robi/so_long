@@ -18,11 +18,11 @@ int	is_right_shape(t_data *data)
 
 	i = 1;
 	data->map.cols = ft_strlen(data->map.tab[0]);
-	if (data->map.cols == data->map.rows)
+	if (data->map.cols - 1 == data->map.rows)
 		return (0);
-	while (data->map.tab[i])
+	while (i < data->map.rows)
 	{
-		if (ft_strlen(data->map.tab[i]) != data->map.cols)
+		if (ft_strlen(data->map.tab[i]) - 1 != data->map.cols - 1)
 			return (0);
 		i++;
 	}
@@ -105,16 +105,16 @@ void	check_map(t_data *data)
 	data->map.player = 0;
 	data->map.coins = 0;
 	if (!(is_right_shape(data)))
-		print_error_and_exit("Map is not rectangular.\n", data);
+		print_error_and_exit("Wrong map shape.\n", data);
 	if (!(is_wall_surrounded(data)))
 		print_error_and_exit("Map is not wall surrounded.\n", data);
 	if (there_is_wrong_char(data))
 		print_error_and_exit("Wrong char in map\n", data);
 	check_characters(data);
 	if (data->map.exit != 1)
-		print_error_and_exit("More than one exit.\n", data);
+		print_error_and_exit("Wrong number of exit.\n", data);
 	if (data->map.player != 1)
-		print_error_and_exit("More than one player.\n", data);
+		print_error_and_exit("Wrong number of player.\n", data);
 	if (data->map.coins == 0)
-		print_error_and_exit("Not enough coins.\n", data);
+		print_error_and_exit("Not enough chicken.\n", data);
 }
