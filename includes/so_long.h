@@ -105,7 +105,7 @@ typedef struct s_data
 	t_map		map;
 	int			is_map_alloc;
 	int			move_count;
-	int			is_ready;
+//	int			is_ready;
 	t_player	player;
 	t_sprite	background;
 	t_sprite	wall;

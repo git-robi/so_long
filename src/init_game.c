@@ -26,7 +26,7 @@ void	init_game(t_data *data)
 	}
 	init_asset(data);
 	data->move_count = 0;
-	data->is_ready = 0;
+//	data->is_ready = 0;
 	data->player.pos = TWO;
 	data->player.dir = RIGHT;
 }

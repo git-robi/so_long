@@ -17,9 +17,9 @@ void	moves_input(t_data *data)
 	char	*move_count;
 
 	move_count = ft_itoa(data->move_count);
-	ft_putstr_fd("Number of moves: ", 1);
-	ft_putstr_fd(move_count, 1);
-	write(1, "\n", 1);
+//	ft_putstr_fd("Number of moves: ", 1);
+//	ft_putstr_fd(move_count, 1);
+//	write(1, "\n", 1);
 	mlx_clear_window(data->mlx_ptr, data->win_ptr);
 	mlx_put_image_to_window(data->mlx_ptr,
 		data->win_ptr, data->paw.xpm_ptr,

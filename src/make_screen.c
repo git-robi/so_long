@@ -73,17 +73,13 @@ void	put_assets_on_screen(t_data *data, int i, int j)
 	}
 }
 
-void	put_decoration(t_data *data)
-{
-	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->exit_c.xpm_ptr, data->map.cols * PX, data->map.rows * PX);
-}
+
 int	make_screen(t_data *data)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	put_decoration(data);
 	while (i < data->map.rows)
 	{
 		j = 0;

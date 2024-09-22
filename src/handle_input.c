@@ -27,6 +27,7 @@ void	move_player(t_data *data, int n_x, int n_y, int asset)
 {
 	int	old_x;
 	int	old_y;
+	char	*print;
 
 	change_movement(data);
 	old_x = data->player.x;
@@ -38,6 +39,11 @@ void	move_player(t_data *data, int n_x, int n_y, int asset)
 	data->move_count += 1;
 	if (asset == COINS)
 		data->map.coins -= 1;
+	print = ft_itoa(data->move_count);
+	ft_putstr_fd("Number of moves: ", 1);
+        ft_putstr_fd(print, 1);
+        write(1, "\n", 1);
+	free(print);
 }
 
 void	get_new_pos(t_data *data, int *n_x, int *n_y, int dir)
