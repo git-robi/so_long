@@ -15,7 +15,7 @@
 void	flood_fill_algorithm(t_data *data, t_copy *map_copy, int y, int x)
 {
 	if (x < 0 || y < 0 || x >= data->map.cols || y >= data->map.rows
-		|| map_copy->tab[y][x] == WALL)
+		|| map_copy->tab[y][x] == WALL || map_copy->tab[y][x] == ENEMY)
 		return ;
 	else if (map_copy->tab[y][x] == EXIT)
 	{
