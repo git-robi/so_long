@@ -21,32 +21,32 @@ void	init_game(t_data *data)
 
 void	init_asset(t_data *data)
 {
-	data->background = make_sprite(BACKGROUND_PATH, data);
-	data->wall = make_sprite(WALL_PATH, data);
-	data->coins = make_sprite(COINS_PATH, data);
-	data->enemy = make_sprite(ENEMY_PATH, data);
-	data->player_one = make_sprite(PLAYER_R_ONE, data);
-	data->player_two = make_sprite(PLAYER_R_TWO, data);
-	data->player_three = make_sprite(PLAYER_R_THREE, data);
-	data->player_four = make_sprite(PLAYER_R_FOUR, data);
-	data->player_five = make_sprite(PLAYER_L_ONE, data);
-	data->player_six = make_sprite(PLAYER_L_TWO, data);
-	data->player_seven = make_sprite(PLAYER_L_THREE, data);
-	data->player_eight = make_sprite(PLAYER_L_FOUR, data);
-	data->exit_o = make_sprite(EXIT_0_PATH, data);
-	data->exit_c = make_sprite(EXIT_C_PATH, data);
-	data->paw = make_sprite(PAW_PATH, data);
+	data->background = make_sprite(BACKGROUND_PATH, data, PX, PX);
+	data->wall = make_sprite(WALL_PATH, data, PX, PX);
+	data->coins = make_sprite(COINS_PATH, data, 40, 40);
+	data->enemy = make_sprite(ENEMY_PATH, data, PX, PX);
+	data->player_one = make_sprite(PLAYER_R_ONE, data, PX, PX);
+	data->player_two = make_sprite(PLAYER_R_TWO, data, PX, PX);
+	data->player_three = make_sprite(PLAYER_R_THREE, data, PX, PX);
+	data->player_four = make_sprite(PLAYER_R_FOUR, data, PX, PX);
+	data->player_five = make_sprite(PLAYER_L_ONE, data, PX, PX);
+	data->player_six = make_sprite(PLAYER_L_TWO, data, PX, PX);
+	data->player_seven = make_sprite(PLAYER_L_THREE, data, PX, PX);
+	data->player_eight = make_sprite(PLAYER_L_FOUR, data, PX, PX);
+	data->exit_o = make_sprite(EXIT_0_PATH, data, PX, PX);
+	data->exit_c = make_sprite(EXIT_C_PATH, data, PX, PX);
+	data->paw = make_sprite(PAW_PATH, data, PX, PX);
 }
 
-t_sprite	make_sprite(char *sprite_path, t_data *data)
+t_sprite	make_sprite(char *sprite_path, t_data *data, int width, int height)
 {
-		t_sprite	sprite;
-		int		px;
+	t_sprite	sprite;
 
-		px = PX;
-		sprite.xpm_ptr = mlx_xpm_file_to_image(data->mlx_ptr, sprite_path, \
-		&px, &px);
-		if (sprite.xpm_ptr == NULL)
-			print_error_and_exit("Sprite not found\n", data);
-		return (sprite);
+	sprite.width = width;
+	sprite.height = height;
+	sprite.xpm_ptr = mlx_xpm_file_to_image(data->mlx_ptr, sprite_path, \
+	&sprite.width, &sprite.height);
+	if (sprite.xpm_ptr == NULL)
+		print_error_and_exit("Sprite not found\n", data);
+	return (sprite);
 }
