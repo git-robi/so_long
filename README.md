@@ -1,17 +1,17 @@
 # 🎮 so_long - A classic 2D Game 
 
-Hey there! 👋 Welcome to my so_long project, where I created a 2D game using the MLX graphics library. Get ready for a cute adventure where you help a little character collect items and find their way to freedom!
+Hey there! Welcome to my so_long project, where I created a 2D game using the MLX graphics library. Get ready for a cute adventure where you help a little character (my dog) collect items and find their way to freedom!
 
-## 🎯 What's This Project About?
+## What's This Project About?
 
 This project challenged me to create a small 2D game where:
-- 🎨 I had to work with a graphics library (MLX)
-- 🗺️ Parse and validate map files
-- 🎮 Handle player movement and interactions
-- 🖼️ Manage sprites and animations
-- 🎵 Create an engaging gaming experience
+- I had to work with a graphics library (MLX)
+- Parse and validate map files
+- Handle player movement and interactions
+- Manage sprites and animations
+- Create an engaging gaming experience
 
-## 🎨 Game Features
+## Game Features
 
 ### Map Elements:
 - `P` Player - Our adorable protagonist
@@ -57,11 +57,11 @@ This project challenged me to create a small 2D game where:
    - Sprite memory handling
    - Clean game exit
 
-## 🎮 Visual Design and Implementation
+## Visual Design and Implementation
 
 For my game's visual identity, I carefully crafted a minimalist black theme enhanced by charming sprite designs. I created an animated player character that brings personality to the gameplay, set against distinctive wall textures that define the game space. To engage players, I designed collectible items that stand out against the background and implemented a dynamic exit door that responds to game state. I added enemy obstacles to create challenge, and topped it off with a custom move counter featuring a playful paw print design that adds character to the UI.
 
-## 🤔 The Tricky Parts
+## The Tricky Parts
 
 Creating this game pushed me to overcome several technical hurdles that expanded my programming expertise.
 
@@ -102,7 +102,7 @@ make
 # Collect all items before reaching the exit!
 ```
 
-## 🗺️ Map Format
+## Map Format
 ```
 1111111111111
 10010000000C1
@@ -116,7 +116,7 @@ make
 - At least one collectible
 - Have a valid path to win
 
-### 🐛 Error Handling
+### Error Handling
 
 The game handles various error cases:
 - Invalid maps
@@ -125,7 +125,7 @@ The game handles various error cases:
 - Invalid characters
 - Window management errors
 
-### 🎨 Assets
+### Assets
 For my assets I chose a minimal back and white style. All game assets are custom-made and stored in the `textures/` directory:
 - Player animations (walking left/right)
 - Wall textures
@@ -134,7 +134,7 @@ For my assets I chose a minimal back and white style. All game assets are custom
 - Enemy sprites
 - UI elements
 
-## 🔍 Final Thoughts
+## Final Thoughts
 
 Creating this game was an exciting journey into the world of game development! It taught me not just about graphics programming, but also about creating an engaging user experience. The combination of technical challenges and creative design made this project particularly enjoyable.
 
